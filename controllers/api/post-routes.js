@@ -7,7 +7,7 @@ const {
 const withAuth = require('../../utils/auth');
 
 
-// Get all posts
+// Route to get all posts
 router.get("/", (req, res) => {
     Post.findAll({
             attributes: ["id", "content", "title", "created_at"],
@@ -35,7 +35,7 @@ router.get("/", (req, res) => {
         });
 });
 
-// Get a single post
+// Route to get posts by id
 router.get("/:id", (req, res) => {
     Post.findOne({
             where: {
@@ -71,7 +71,7 @@ router.get("/:id", (req, res) => {
         });
 });
 
-// Create a post
+// Route to create a new post
 router.post("/", withAuth, (req, res) => {
     console.log("creating");
     Post.create({
@@ -86,7 +86,7 @@ router.post("/", withAuth, (req, res) => {
         });
 });
 
-// Update a post
+// Route to update a post
 router.put("/:id", withAuth, (req, res) => {
     Post.update({
             title: req.body.title,
@@ -112,7 +112,7 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 
-//Delete a post
+// Route to delete a post
 router.delete("/:id", withAuth, (req, res) => {
     Post.destroy({
             where: {
