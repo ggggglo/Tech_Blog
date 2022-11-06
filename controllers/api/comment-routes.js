@@ -6,7 +6,6 @@ const {
 } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//Route to get all comments
 router.get("/", (req, res) => {
     Comment.findAll()
         .then((dbCommentData) => res.json(dbCommentData))
@@ -16,7 +15,6 @@ router.get("/", (req, res) => {
         });
 });
 
-//Route to create a comment
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Comment.create({

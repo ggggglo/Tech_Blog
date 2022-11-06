@@ -6,7 +6,7 @@ const {
     Comment
 } = require('../models');
 
-// Get all posts in homepage
+
 router.get('/', (req, res) => {
     Post.findAll({
             attributes: [
@@ -45,7 +45,6 @@ router.get('/', (req, res) => {
         });
 });
 
-// Get posts by id in homepage
 router.get('/post/:id', (req, res) => {
     Post.findOne({
             where: {
@@ -94,7 +93,6 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
-// If logged in go to home page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -104,7 +102,6 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// If logged in go to homepage 
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -116,7 +113,8 @@ router.get('/signup', (req, res) => {
 
 
 router.get('*', (req, res) => {
-    res.status(404).send("Not found!");
+    res.status(404).send("Can't go there!");
+    // res.redirect('/');
 })
 
 

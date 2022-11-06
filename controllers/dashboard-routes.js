@@ -7,7 +7,7 @@ const {
 } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Get all posts in user dashboard
+
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
             where: {
@@ -48,7 +48,6 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-// Get post by id in user dashboard
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
             where: {
@@ -97,7 +96,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 })
 
-// Create new post
 router.get('/new', (req, res) => {
     res.render('add-post', {
         loggedIn: true

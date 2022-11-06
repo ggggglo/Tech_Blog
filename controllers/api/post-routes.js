@@ -6,8 +6,6 @@ const {
 } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
-// Route to get all posts
 router.get("/", (req, res) => {
     Post.findAll({
             attributes: ["id", "content", "title", "created_at"],
@@ -35,7 +33,6 @@ router.get("/", (req, res) => {
         });
 });
 
-// Route to get posts by id
 router.get("/:id", (req, res) => {
     Post.findOne({
             where: {
@@ -71,7 +68,6 @@ router.get("/:id", (req, res) => {
         });
 });
 
-// Route to create a new post
 router.post("/", withAuth, (req, res) => {
     console.log("creating");
     Post.create({
@@ -86,7 +82,6 @@ router.post("/", withAuth, (req, res) => {
         });
 });
 
-// Route to update a post
 router.put("/:id", withAuth, (req, res) => {
     Post.update({
             title: req.body.title,
@@ -111,8 +106,6 @@ router.put("/:id", withAuth, (req, res) => {
         });
 });
 
-
-// Route to delete a post
 router.delete("/:id", withAuth, (req, res) => {
     Post.destroy({
             where: {
