@@ -12,5 +12,22 @@
     "express-session": "^1.17.3",
     "i": "^0.3.7",
     "npm": "^8.19.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "tech_blog",
+  "description": "CMS-style blog to publish articles, blog posts and thought and opinions",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggggglo/Tech_Blog.git"
+  },
+  "author": "Glo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ggggglo/Tech_Blog/issues"
+  },
+  "homepage": "https://github.com/ggggglo/Tech_Blog#readme"
 }
