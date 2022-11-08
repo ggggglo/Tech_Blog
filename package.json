@@ -12,7 +12,7 @@
     "express-session": "^1.17.3"
   },
   "scripts": {
-    "start": "node app/server.js"
+    "start": "node server.js"
   },
   "name": "tech_blog",
   "description": "CMS-style blog to publish articles, blog posts and thought and opinions",
