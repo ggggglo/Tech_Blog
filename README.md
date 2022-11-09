@@ -15,6 +15,7 @@ An application that when running:
 - When clicking the log out button, user session will be destroyed
 
 # Deployed Application Link
+https://desolate-anchorage-94155.herokuapp.com/dashboard/edit/1
 
 # Images
 ![1](./public/images/1.png)
